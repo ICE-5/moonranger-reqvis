@@ -28,7 +28,7 @@ openpyxl=3.0.5
   * If a requirement's parent is missing or deleted.
   * If a requirement's additional parent is missing or deleted.
 
-* Step 3, if no exception is raised, and `JSON file generated. Please open index.html to preview visualization.` is prompted, then it means `data.json` for visualization is successfully generated and everything is set . Run a server and click on `index.html` to see the visualization. For example, with `Python 3` you can do, 
+* Step 3, if no exception is raised, and `JSON file generated. Please open index.html to preview visualization.` is prompted, then it means `data.json` for visualization is successfully generated and everything is set . Run a server to see the visualization. For example, with `Python 3` you can do, 
   * Run command
     ```bash
     python3 -m http.server
