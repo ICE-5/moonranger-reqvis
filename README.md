@@ -2,6 +2,8 @@
 
 This repository contains the script for automatic checking & visualizing `MR-SYS-0001 MoonRanger Requirements.xlsx`.
 
+> **Important**: the original requirement sheet (in `.xlsx`) shall not be uploaded to this public repo. Please locally run the script and only commit the newly generated `data.json` for visualization.
+
 ## Dependencies
 
 ```
@@ -16,9 +18,9 @@ openpyxl=3.0.5
     ```bash
     python mrreq.py
     ```
-  * If you want to use other path for the requirement `.xlsx` file, then input the path as first argument.
+  * If you want to use other path for the requirement sheet, then input the path as first argument.
     ```bash
-    python mrreq.py <path-to-xlsx>
+    python mrreq.py <path-of-xlsx>
     ```
 * The script will automatically check for the following errors and print out info.
   * If a requirement's parent is missing or deleted.
