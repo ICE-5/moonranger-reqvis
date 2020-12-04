@@ -1,4 +1,4 @@
-# MoonRanger Requirement Visualization
+# MoonRanger Requirements' Automated Analysis & Visualization Pipeline 
 
 Webpage: [https://ice-5.github.io/moonranger-reqvis/](https://ice-5.github.io/moonranger-reqvis/)
 
