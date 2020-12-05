@@ -31,16 +31,20 @@ coloredlogs=14.0
     ```bash
     python mrreq.py <path-of-xlsx>
     ```
-* The script will automatically check for the following errors and print out info.
-  * If a requirement's parent is missing or deleted.
-  * If a requirement's additional parent is missing or deleted.
+* The script will automatically check for the following issues and log messages.
+  * **`ERROR`** if a requirement's parent is missing or deleted.
+  * **`ERROR`** if a requirement's additional parent is missing or deleted.
+  * **`CRITICAL`** if there is `TBD` / `TBR` / missing values such as `XYZ` in the requirement, but there is **NOT** such flag in status column.
+  * **`WARNING`** if there is **NOT** `TBD` / `TBR` / missing values such as `XYZ` in the requirement, but there is such flag in status column.
 
-* Step 3, if no exception is raised, and `JSON file generated. Please open index.html to preview visualization.` is prompted, then it means `data.json` for visualization is successfully generated and everything is set . Run a server to see the visualization. For example, with `Python 3` you can do, 
+* Step 3, if `data.json for visualization successfully generated, ready to view!` is prompted, it means visualization is all set . Run a server to see the visualization. For example, with `Python 3` you can do, 
   * Run command
     ```bash
     python3 -m http.server
     ```
   * Open `http://localhost:8000/` in browser, and the visualization will be there, viola!
+
+* Step 4, if `statistics.json for calculating TBD/TBR/XYZ successfully generated, ready to view!` is prompted, it means statistics are calculated. Open `statistics.json` for some numbers!
 
 
 ## Guideline for maintaining the pipeline
