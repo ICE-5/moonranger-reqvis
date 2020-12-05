@@ -37,7 +37,7 @@ coloredlogs=14.0
   * **`CRITICAL`** if there is `TBD` / `TBR` / missing values such as `XYZ` in the requirement, but there is **NOT** such flag in status column.
   * **`WARNING`** if there is **NOT** `TBD` / `TBR` / missing values such as `XYZ` in the requirement, but there is such flag in status column.
 
-* Step 3, if `data.json for visualization successfully generated, ready to view!` is prompted, it means visualization is all set . Run a server to see the visualization. For example, with `Python 3` you can do, 
+* Step 3, if `data.json for visualization successfully generated, ready to view!` is prompted, it means visualization is all set . Run a server to see it. For example, with `Python 3` you can do, 
   * Run command
     ```bash
     python3 -m http.server
@@ -48,7 +48,7 @@ coloredlogs=14.0
 
 
 ## Guideline for maintaining the pipeline
-Since the script depends on structure of the requirement sheet, there are certain rules to follow in order to maintain the pipeline.
+Since the script depends on structure of the requirement sheet (`.xlsx` file), there are certain rules to follow in order to maintain the pipeline.
 
 1. If a tab (or sheet) contains requirements, then it is associated with a subsystem. Each subsystem is identifiable via a three-letter key. Make sure to name the sheet with something that starts with this key (not case-sensitive). Below shows a hierarchy of currently identifiable keys to the script. For example, `Objective` is a successful naming of a tab, because its first three letters conforms with key `OBJ`.
   ```
