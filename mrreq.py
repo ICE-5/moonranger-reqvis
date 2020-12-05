@@ -113,7 +113,7 @@ class MRReqChecker:
             json.dump(data, outfile)
         self.logger.info("data.json for visualization successfully generated, ready to view!")
         return data
-    
+
 
     def output_statistics(self):
         output = {}
@@ -147,7 +147,7 @@ class MRReqChecker:
         if not self.check_existed(req_id):
             raise ValueError("Invalid requirement ID")
 
-        if self.requirement_dict[req_id].level >= 1:
+        if self.requirement_dict[req_id].level >= 0:
             req = self.requirement_dict[req_id]
             if req.level != -1:
                 # check parent
@@ -423,5 +423,8 @@ if __name__ == "__main__":
 
     rc = MRReqChecker(filepath)
     rc.fullsweep()
+    # tmp = rc.requirement_dict
+    # for req_id, req in tmp.items():
+    #     print(req)
     rc.convert_to_tree()
     rc.output_statistics()
