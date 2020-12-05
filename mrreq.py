@@ -242,7 +242,7 @@ class MRReqChecker:
             int: total number of mark found
         """
         if mark == "XYZ":
-            regex = r"\s[XYZ][\s']"
+            regex = r"\W[XYZ]\W"
         else:
             regex = mark
         return len(re.findall(regex, req.description))
