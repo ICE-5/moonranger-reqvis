@@ -101,7 +101,6 @@ class MRReqChecker:
             children = req.children
             if len(children) == 0:
                 tmp_dict["name"] += f" | {req.description}"
-                # return tmp_dict
             else:
                 tmp_dict["children"] = []
                 for child_id in children:
@@ -265,7 +264,7 @@ class MRReqChecker:
         return False
 
 
-    def _get_requirements_per_subsystem(self, subsystem: Subsystem) -> List[Requirement]:
+    def _get_requirements_per_subsystem(self, subsystem: Subsystem) -> List[str]:
         """Retrieve all requirements under a certain sheet (subsystem).
 
         Args:
@@ -423,8 +422,5 @@ if __name__ == "__main__":
 
     rc = MRReqChecker(filepath)
     rc.fullsweep()
-    # tmp = rc.requirement_dict
-    # for req_id, req in tmp.items():
-    #     print(req)
     rc.convert_to_tree()
     rc.output_statistics()
