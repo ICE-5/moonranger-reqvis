@@ -64,4 +64,4 @@ TBD
 TBR
 MissingValue
 ```
-1. Its perfectly fine to create other new flags, as long as they are consistent everywhere in the sheet. 
+5. Its perfectly fine to create other new flags, as long as they are consistent everywhere in the sheet. Please add new checking function to the `MRReqCheck` class if you see fit.
