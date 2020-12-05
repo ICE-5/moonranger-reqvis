@@ -50,7 +50,7 @@ coloredlogs=14.0
 ## Guideline for maintaining the pipeline
 Since the script depends on structure of the requirement sheet (`.xlsx` file), there are certain rules to follow in order to maintain the pipeline.
 
-1. If a tab (or sheet) contains requirements, then it is associated with a subsystem. Each subsystem is identifiable via a three-letter key. Make sure to name the sheet with something that starts with this key (not case-sensitive). Below shows a hierarchy of currently identifiable keys to the script. For example, `Objective` is a successful naming of a tab, because its first three letters conforms with key `OBJ`.
+1. If a tab (or sheet) contains requirements, then it is associated with a subsystem. Each subsystem is identifiable via a three-letter key. Make sure to name the sheet with something that starts with this key (not case-sensitive). Below shows a hierarchy of currently identifiable keys to the script. For example, `Objective` is a successful naming of a tab, because its first three letters conform with key `OBJ`.
   ```
   'L0': ['OBJ'],
   'L1': ['MIS'],
@@ -60,7 +60,7 @@ Since the script depends on structure of the requirement sheet (`.xlsx` file), t
 
 2. If a tab contains requirements, its first row should be title of the tab, its second row **must** be column names. And requirements **must** start from the third row.
 3. **Avoid** merging cells. Remember one could always choose `overflow` in `text-wrap` options to ensure a complete display of text.
-4. For control of requirement status, here are the list of flags (not case-sensitive). Make sure the spelling is correct and words are concatenate. For example, `missing value` is a **wrong** flag, the correct flag can be `MissingValue`, `missingvalue`, `MISSINGVALUE`, etc.
+4. For control of requirement status, here are the list of flags (not case-sensitive) currently in use. Make sure the spelling is correct and words are concatenated. For example, `missing value` is a **wrong** flag, the correct flag can be `MissingValue`, `missingvalue`, `MISSINGVALUE`, etc.
 ```
 Deleted
 MissingParent
@@ -69,4 +69,4 @@ TBD
 TBR
 MissingValue
 ```
-5. Its perfectly fine to create other new flags, as long as they are consistent everywhere. 
+5. It's perfectly fine to create other new flags, as long as they are consistent everywhere. 
