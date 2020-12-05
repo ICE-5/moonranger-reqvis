@@ -1,10 +1,16 @@
-# MoonRanger Requirements' Automated Analysis & Visualization Pipeline 
+# MoonRanger Automatated Requirement Analysis & Visualization Pipeline
 
-Webpage: [https://ice-5.github.io/moonranger-reqvis/](https://ice-5.github.io/moonranger-reqvis/)
+[[Link to visualization webpage](https://ice-5.github.io/moonranger-reqvis/)]
 
 This repository contains the script for automatic checking & visualizing `MR-SYS-0001 MoonRanger Requirements.xlsx`.
 
 > **Important**: the original requirement sheet (in `.xlsx`) shall not be uploaded to this public repo. Please locally run the script and only commit the newly generated `data.json` for visualization.
+
+**Content**
+- [MoonRanger Requirement Visualization](#moonranger-requirement-visualization)
+  - [Dependencies](#dependencies)
+  - [Usage](#usage)
+  - [Guideline for maintaining the pipeline](#guideline-for-maintaining-the-pipeline)
 
 ## Dependencies
 
@@ -34,3 +40,28 @@ openpyxl=3.0.5
     python3 -m http.server
     ```
   * Open `http://localhost:8000/` in browser, and the visualization will be there, viola!
+
+
+## Guideline for maintaining the pipeline
+Since the script depends on structure of the requirement sheet, there are certain rules to follow in order to maintain the pipeline.
+
+1. If a tab contains requirements, make sure to name it with a three-letter keyword that can be recognized by the script. If there is a new keyword, please remember to update the dictionary in the script. Currently, the recognizable keywords are,
+  ```
+  'L0': ['OBJ'],
+  'L1': ['MIS'],
+  'L2': ['SYS', 'MOP'],
+  'L3': ['FAC', 'OPR', 'MCS', 'DPR', 'MEC', 'SDE', 'AVI', 'SOF', 'THR', 'POW']
+  ```
+
+2. If a tab contains requirements, its first row should be title of the tab, its second row **must** be column names. And requirements shall start at the third row.
+3. **Avoid** merge cells. Remember one could always choose `overflow` in `text-wrap` options to ensure a conplete display of text.
+4. For control of requirement status, here are the list of flags. Upper/lower case doesn't matter, as long as the spelling is correct and words are concatenated. 
+```
+Deleted
+MissingParent
+MissingAdditionalParent
+TBD
+TBR
+MissingValue
+```
+1. Its perfectly fine to create other new flags, as long as they are consistent everywhere in the sheet. 
